@@ -10,6 +10,7 @@
 
 import random
 
+""" The class mimics a coin with an amount of coins and a side up."""
 class Coin:
     def __init__(self):
         self.__amount = 20
@@ -27,6 +28,7 @@ class Coin:
     def get_amount(self):
         return self.__amount
     
+""" Function to play a round of the coin toss game between two players."""    
 def play_round(player1, player2):
     player1.toss()
     player2.toss()
@@ -44,6 +46,7 @@ def play_round(player1, player2):
 
     print(f"Player 1 Coins: {player1.get_amount()}, Player 2 Coins: {player2.get_amount()}")
 
+    """ Main function that starts the game and manages the player interactions."""
 
 def main():
     player1 = Coin()
@@ -69,6 +72,14 @@ def main():
     else:
         print("It's a tie!")
 
+"""
+    Runs the coin toss game between two players.
+
+    Prompts the user to start the game and continues to play rounds as long as the user agrees
+    and both players have coins remaining. Each round, both players toss a coin and exchange coins
+    based on whether their tosses match. The game ends when the user chooses to stop or when a player
+    runs out of coins. At the end, announces the winner or if the game is a tie.
+    """        
 def main():
     player1 = Coin()
     player2 = Coin()
@@ -93,5 +104,6 @@ def main():
     else:
         print("It's a tie!")
 
+"""Main function that makes the game run. An verifies if all functions and classes are working correctly."""
 if __name__ == "__main__":
-    main()
+    main() 

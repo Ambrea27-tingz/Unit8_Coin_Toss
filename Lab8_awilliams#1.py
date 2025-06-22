@@ -35,7 +35,7 @@ def play_round(player1, player2):
 
     if player1.get_sideup() == player2.get_sideup():
         player1.set_amount(1)
-        player2.set_amount(-1)
+        player2.set_amount(-1) # Player 1 loses a coin
         print("Coins matched! Player 1 gets a coin from Player 2.")
     else:
         player1.set_amount(-1)
@@ -45,3 +45,50 @@ def play_round(player1, player2):
     print(f"Player 1 Coins: {player1.get_amount()}, Player 2 Coins: {player2.get_amount()}")
 
 
+def main():
+    player1 = Coin()
+    player2 = Coin()
+
+    user_input = input("Do you want to play? (y/n): ").lower()
+    if user_input != "y":
+        print("Game ended before starting.")
+        return
+
+    while user_input == "y":
+        play_round(player1, player2)
+
+        if player1.get_amount() == 0 or player2.get_amount() == 0: #updates coin amount
+            break
+
+        user_input = input("Do you want to continue playing? (y/n): ").lower()
+
+    if player1.get_amount() > player2.get_amount():
+        print("Player 1 wins the game!")
+    elif player2.get_amount() > player1.get_amount():
+        print("Player 2 wins the game!")
+    else:
+        print("It's a tie!")
+
+def main():
+    player1 = Coin()
+    player2 = Coin()
+
+    user_input = input("Do you want to play? (y/n): ").lower()
+    if user_input != "y":
+        print("Game ended before starting.")
+        return
+
+    while user_input == "y":
+        play_round(player1, player2)
+
+        if player1.get_amount() == 0 or player2.get_amount() == 0:
+            break
+
+        user_input = input("Do you want to continue playing? (y/n): ").lower()
+
+    if player1.get_amount() > player2.get_amount():
+        print("Player 1 wins the game!")
+    elif player2.get_amount() > player1.get_amount():
+        print("Player 2 wins the game!")
+    else:
+        print("It's a tie!")

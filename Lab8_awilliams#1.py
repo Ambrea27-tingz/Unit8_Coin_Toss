@@ -92,3 +92,6 @@ def main():
         print("Player 2 wins the game!")
     else:
         print("It's a tie!")
+
+if __name__ == "__main__":
+    main()
